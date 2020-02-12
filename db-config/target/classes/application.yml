@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: config-center
+  profiles:
+    active: jdbc
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/config_center?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+  cloud:
+    config:
+      label: master
+      server:
+        jdbc:
+          sql: SELECT key1, value1 from config_properties where APPLICATION=? and PROFILE=? and LABEL=?
+server:
+  port: 8888

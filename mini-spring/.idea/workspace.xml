@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ddd937fd-6747-45c2-9fa9-2e184196a706" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1XYY6Us8Ap654RrdnrUUG0aQglL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/framework/src/main/java/com/sun/mini" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.sun.mini.web.mvc" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/framework/src/main/java/com/sun/mini" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ddd937fd-6747-45c2-9fa9-2e184196a706" name="Default Changelist" comment="" />
+      <created>1581224319554</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581224319554</updated>
+      <workItem from="1581224322405" duration="1528000" />
+      <workItem from="1581226874281" duration="6127000" />
+      <workItem from="1581337305574" duration="304000" />
+      <workItem from="1581337695248" duration="4243000" />
+      <workItem from="1581342601540" duration="50000" />
+      <workItem from="1581466502188" duration="226000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2000" y="-12" key="#Project_Structure" timestamp="1581341404521">
+      <screen x="1440" y="-217" width="1920" height="1080" />
+    </state>
+    <state x="2000" y="-12" key="#Project_Structure/0.0.1440.900/1440.-217.1920.1080@1440.-217.1920.1080" timestamp="1581341404521" />
+    <state x="2151" y="-6" key="#com.intellij.ide.util.MemberChooser" timestamp="1581337535541">
+      <screen x="1440" y="-194" width="1920" height="1057" />
+    </state>
+    <state x="533" y="160" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1581230820723" />
+    <state x="2151" y="-6" key="#com.intellij.ide.util.MemberChooser/0.23.1440.797/1440.-194.1920.1057@1440.-194.1920.1057" timestamp="1581337535541" />
+    <state x="2703" y="-194" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581335105060">
+      <screen x="1440" y="-194" width="1920" height="1057" />
+    </state>
+    <state x="2703" y="-194" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.797/1440.-194.1920.1057@1440.-194.1920.1057" timestamp="1581335105060" />
+    <state x="114" y="16" key="new project wizard" timestamp="1581227953951">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="114" y="16" key="new project wizard/0.0.1440.900@0.0.1440.900" timestamp="1581227953951" />
+    <state x="1953" y="36" width="894" height="794" key="search.everywhere.popup" timestamp="1581339268304">
+      <screen x="1440" y="-194" width="1920" height="1057" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1581230680383" />
+    <state x="1953" y="36" width="894" height="794" key="search.everywhere.popup/0.23.1440.797/1440.-194.1920.1057@1440.-194.1920.1057" timestamp="1581339268304" />
+  </component>
+</project>
