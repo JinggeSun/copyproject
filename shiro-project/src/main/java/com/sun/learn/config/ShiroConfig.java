@@ -2,6 +2,7 @@ package com.sun.learn.config;
 
 import com.sun.learn.realm.CustomRealm;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.realm.Realm;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
@@ -45,15 +46,18 @@ public class ShiroConfig {
 
         // 按照顺序的map
         Map<String,String> filterMap = new LinkedHashMap<>();
-        // filterMap.put("/page/home","anon");
-        // filterMap.put("/page/account","anon");
-        filterMap.put("/page/login","anon");
+
+        //登陆提交接口
+        filterMap.put("/login","anon");
+        filterMap.put("/getCaptcha","anon");
+        //静态资源
+        filterMap.put("/public/**","anon");
 
         //授权过滤器
         //访问这个接口，必须授权。在realm进行授权
-        filterMap.put("/page/account","perms[account:/page/account]");
+        //filterMap.put("/page/account","perms[account:/page/account]");
 
-        filterMap.put("/**","anon");
+        filterMap.put("/**","authc");
 
         filterFactoryBean.setFilterChainDefinitionMap(filterMap);
         //配置登陆页面
@@ -72,17 +76,34 @@ public class ShiroConfig {
     public SecurityManager securityManager(){
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         // 关联realm
-        securityManager.setRealm(customRealm());
+        securityManager.setRealm(customRealm(matcher()));
         return securityManager;
     }
 
     /**
      * 创建realm
+     * 1. 加入加密算法
      */
     @Bean
-    public Realm customRealm(){
+    public Realm customRealm(HashedCredentialsMatcher matcher){
         log.info("自定义realm 注册完成！");
+
         return new CustomRealm();
+    }
+
+    /**
+     * 加密配置
+     * @return
+     */
+    @Bean
+    public HashedCredentialsMatcher matcher(){
+        HashedCredentialsMatcher matcher = new HashedCredentialsMatcher();
+        //加密算法
+        matcher.setHashAlgorithmName("MD5");
+        //加密次数
+        matcher.setHashIterations(2);
+
+        return matcher;
     }
 
 

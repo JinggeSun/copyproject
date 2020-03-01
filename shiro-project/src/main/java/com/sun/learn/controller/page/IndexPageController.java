@@ -42,27 +42,4 @@ public class IndexPageController {
     public String noauth(){
         return "noauth";
     }
-
-    @PostMapping("/login")
-    public String login(String name, String password, Model model){
-        /**
-         * 使用shiro进行认证
-         */
-        //1. 获取subject主体
-        Subject subject = SecurityUtils.getSubject();
-        //2. 封装用户数据
-        UsernamePasswordToken token = new UsernamePasswordToken(name,password);
-        //3. 执行登陆
-        try {
-            subject.login(token);
-            //登陆成功
-            return "redirect:/page/index";
-        }catch (UnknownAccountException e){
-            model.addAttribute("msg","用户名不存在");
-            return "login";
-        }catch (IncorrectCredentialsException e){
-            model.addAttribute("msg","密码错误");
-            return "login";
-        }
-    }
 }
