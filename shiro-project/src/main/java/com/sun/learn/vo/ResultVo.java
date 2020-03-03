@@ -1,4 +1,4 @@
-package com.sun.learn.result;
+package com.sun.learn.vo;
 
 import com.sun.learn.enums.ExceptionEnums;
 import lombok.AllArgsConstructor;

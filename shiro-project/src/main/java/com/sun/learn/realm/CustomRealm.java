@@ -10,7 +10,10 @@ import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.Subject;
+import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.security.auth.login.AccountLockedException;
 
 /**
  * 自定义realm
@@ -64,11 +67,26 @@ public class CustomRealm extends AuthorizingRealm {
 
         Account account =  accountService.findByName(token.getUsername());
 
+        //用户名不存在
         if (account == null){
-            //用户名不存在
-            //shiro 跑出 noaccount异常
-            return null;
+            throw new UnknownAccountException();
         }
-        return new SimpleAuthenticationInfo(account,account.getPassword(),"");
+
+        //是否被禁用
+        if (account.getStatus() < 0){
+            throw new LockedAccountException();
+        }
+
+        //盐
+        ByteSource salt = ByteSource.Util.bytes(account.getSalt());
+
+        //密码验证
+        return new SimpleAuthenticationInfo(
+                account.getUserName(),
+                account.getPassword(),
+                salt,
+                getName()
+        );
+        //return new SimpleAuthenticationInfo(account,account.getPassword(),"");
     }
 }

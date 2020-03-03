@@ -1,7 +1,7 @@
 package com.sun.learn.util;
 
 import com.sun.learn.enums.ExceptionEnums;
-import com.sun.learn.result.ResultVo;
+import com.sun.learn.vo.ResultVo;
 
 /**
  * @author zcm

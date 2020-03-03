@@ -1,6 +1,7 @@
 package com.sun.learn.config;
 
 import com.sun.learn.realm.CustomRealm;
+import com.sun.learn.util.ShiroUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.mgt.SecurityManager;
@@ -87,8 +88,10 @@ public class ShiroConfig {
     @Bean
     public Realm customRealm(HashedCredentialsMatcher matcher){
         log.info("自定义realm 注册完成！");
-
-        return new CustomRealm();
+        CustomRealm customRealm = new CustomRealm();
+        //realm 关联算法
+        customRealm.setCredentialsMatcher(matcher);
+        return customRealm;
     }
 
     /**
@@ -99,10 +102,9 @@ public class ShiroConfig {
     public HashedCredentialsMatcher matcher(){
         HashedCredentialsMatcher matcher = new HashedCredentialsMatcher();
         //加密算法
-        matcher.setHashAlgorithmName("MD5");
+        matcher.setHashAlgorithmName(ShiroUtil.ALG_NAME);
         //加密次数
-        matcher.setHashIterations(2);
-
+        matcher.setHashIterations(ShiroUtil.HASH_ITERATION);
         return matcher;
     }
 

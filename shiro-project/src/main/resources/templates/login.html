@@ -114,9 +114,13 @@
                 dataType:"json",
                 success:function(data){
                     console.log(data);
-                    layer.msg('登录成功', function () {
-                        window.location.href = '/page/index';
-                    });
+                    if (data.code === 200){
+                        layer.msg('登录成功', function () {
+                            window.location.href = '/page/index';
+                        });
+                    }else{
+                        layer.msg(data.message);
+                    }
                 },
                 error:function(data){
 

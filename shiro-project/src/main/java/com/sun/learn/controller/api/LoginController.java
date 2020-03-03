@@ -5,15 +5,15 @@ import com.google.code.kaptcha.impl.DefaultKaptcha;
 import com.sun.learn.entity.from.LoginForm;
 import com.sun.learn.enums.ExceptionEnums;
 import com.sun.learn.exception.CustomException;
-import com.sun.learn.result.ResultVo;
+import com.sun.learn.vo.ResultVo;
 import com.sun.learn.util.ResultVoUtil;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
+import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.imageio.ImageIO;
@@ -96,9 +96,10 @@ public class LoginController {
         //3. 验证验证码
         String verCode = (String) subject.getSession().getAttribute(CAPTCHA_SESSION);
         System.out.println(verCode);
-        if (!loginForm.getCaptcha().equals(verCode)){
-            throw new CustomException(ExceptionEnums.LOGIN_CAPTCHA);
-        }
+        // 临时注销
+        //if (!loginForm.getCaptcha().equals(verCode)){
+        //    throw new CustomException(ExceptionEnums.LOGIN_CAPTCHA);
+        //}
         //4. 执行登陆
         try {
             subject.login(token);
@@ -106,7 +107,9 @@ public class LoginController {
             return ResultVoUtil.successResult();
         }catch (UnknownAccountException e){
             throw new CustomException(ExceptionEnums.LOGIN_NO_ACCOUNT);
-        }catch (IncorrectCredentialsException e){
+        } catch (LockedAccountException e){
+            throw new CustomException(ExceptionEnums.LOGIN_ACCOUNT_LOCK);
+        } catch (IncorrectCredentialsException e){
             throw new CustomException(ExceptionEnums.LOGIN_PASSWORD_ERROR);
         }
     }

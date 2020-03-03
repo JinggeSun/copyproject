@@ -20,4 +20,7 @@ public class CustomException extends RuntimeException{
         this.code = exceptionEnums.getCode();
     }
 
+    public Integer getCode() {
+        return code;
+    }
 }

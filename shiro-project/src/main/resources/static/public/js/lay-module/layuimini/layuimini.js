@@ -49,6 +49,9 @@ layui.define(["element", "jquery"], function (exports) {
                 if (data == null) {
                     layuimini.msg_error('暂无菜单信息');
                 } else {
+                    console.log(data.homeInfo);
+                    console.log(data.logoInfo);
+                    console.log(data.menuInfo);
                     layuimini.initHome(data.homeInfo);
                     layuimini.initLogo(data.logoInfo);
                     layuimini.initClear(data.clearInfo);

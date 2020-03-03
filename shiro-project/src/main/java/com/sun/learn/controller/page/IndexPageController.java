@@ -18,11 +18,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/page")
 public class IndexPageController {
 
+    /**
+     * 首页
+     * @return
+     */
     @RequestMapping("/index")
     public String index(){
         return "index";
     }
 
+    /**
+     * tab 的首页
+     * @return
+     */
     @RequestMapping("/home")
     public String home(){
         return "home";
