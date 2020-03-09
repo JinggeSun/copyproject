@@ -17,14 +17,16 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/index")
-public class IndexController {
+public class IndexController extends BaseController{
 
     @Autowired
     AccountService accountService;
 
     @GetMapping("/menu")
     public String getMenu(){
-        Map<String,Object> map = accountService.findMenuById(1);
+        String userName = getCurrentUser();
+        Account account = accountService.findByName(userName);
+        Map<String,Object> map = accountService.findMenuById(account.getId());
         return JSON.toJSONString(map);
     }
 

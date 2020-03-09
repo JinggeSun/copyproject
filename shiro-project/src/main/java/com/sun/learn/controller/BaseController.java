@@ -15,8 +15,8 @@ public class BaseController {
         return SecurityUtils.getSubject();
     }
 
-    protected Account getCurrentUser() {
-        return (Account) getSubject().getPrincipal();
+    protected String getCurrentUser() {
+        return (String) getSubject().getPrincipal();
     }
 
     protected Session getSession() {

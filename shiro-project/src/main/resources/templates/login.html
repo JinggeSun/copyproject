@@ -116,7 +116,7 @@
                     console.log(data);
                     if (data.code === 200){
                         layer.msg('登录成功', function () {
-                            window.location.href = '/page/index';
+                            window.location = '/page/index';
                         });
                     }else{
                         layer.msg(data.message);

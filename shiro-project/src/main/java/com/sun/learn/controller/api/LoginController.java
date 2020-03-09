@@ -2,6 +2,7 @@ package com.sun.learn.controller.api;
 
 
 import com.google.code.kaptcha.impl.DefaultKaptcha;
+import com.sun.learn.controller.BaseController;
 import com.sun.learn.entity.from.LoginForm;
 import com.sun.learn.enums.ExceptionEnums;
 import com.sun.learn.exception.CustomException;
@@ -112,5 +113,14 @@ public class LoginController {
         } catch (IncorrectCredentialsException e){
             throw new CustomException(ExceptionEnums.LOGIN_PASSWORD_ERROR);
         }
+    }
+
+    @GetMapping("/logout")
+    public ResultVo logout(){
+        Subject subject = SecurityUtils.getSubject();
+        if (subject.isAuthenticated()){
+            subject.logout();
+        }
+        return ResultVoUtil.successResult();
     }
 }

@@ -112,8 +112,13 @@
         layuimini.init('/index/menu');
 
         $('.login-out').on("click", function () {
-            layer.msg('退出登录成功', function () {
-                window.location = 'login.html';
+
+            $.getJSON("/logout", function (data, status) {
+                if (data.code === 200) {
+                    layer.msg('退出登录成功', function () {
+                        window.location = '/page/toLogin';
+                    });
+                }
             });
         });
     });
