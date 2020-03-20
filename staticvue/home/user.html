@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- <#include "/header.html"> -->
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- import Vue before Element -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body>
+  <div id="app">
+<template>
+  <div class="hello">
+    <ul>
+      <li v-for="user in users">{{user}}</li>//遍历传递过来的值，然后呈现到页面
+    </ul>
+  </div>
+</template>
+</div>
+</body>
+<script type="module">
+export default {
+  name: 'HelloWorld',
+  props:{
+    users:{           //这个就是父组件中子标签自定义名字
+      type:Array,
+      required:true
+    }
+  }
+}
+</script>
+</html>

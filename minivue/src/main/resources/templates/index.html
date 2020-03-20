@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:include="/common/header :: commonHead('后台首页')"></head>
+<body>
+<div id="app">
+    <users v-bind:users="users"></users>
+    <el-button @click="visible = true">Button</el-button>
+    <el-dialog :visible.sync="visible" title="Hello world">
+        <p>Try Element</p>
+    </el-dialog>
+</div>
+<span th:include="/common/on-load-js :: commonOnLoadJs"></span>
+<script src="js/index.js" type="module"></script>
+</body>
+</html>
