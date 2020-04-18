@@ -41,6 +41,7 @@ class ShiroProjectApplicationTests {
 		System.out.println(salt);
 		SimpleHash hash = new SimpleHash("md5", "123456", salt,2);
 		System.out.println(hash);
+
 	}
 
 }

@@ -13,4 +13,9 @@ public class PageController {
     public String index(){
         return "index";
     }
+
+    @GetMapping("/page/home")
+    public String home(){
+        return "/components/index";
+    }
 }

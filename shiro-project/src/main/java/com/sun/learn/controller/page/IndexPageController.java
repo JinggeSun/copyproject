@@ -50,4 +50,10 @@ public class IndexPageController {
     public String noauth(){
         return "noauth";
     }
+
+
+    @RequestMapping("/sys/rule")
+    public String rule(){
+        return "sys/rule";
+    }
 }

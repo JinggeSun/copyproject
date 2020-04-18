@@ -18,7 +18,7 @@ public class TestApp {
 
         //1. 每个值使用double 类型
         //2。 % 取余
-        //3. 表达式 true fasle
+        //3. 表达式 true false
         //4。 绝对值
 
         // 执行字符串表达式：(k-(x-y)*0.1)，进行计算
@@ -26,14 +26,12 @@ public class TestApp {
         map.put("k", 10);
         map.put("x", 24D);
         map.put("y", 4);
-        String formula = "10*Math.abs(-1)<(2*5)/2-100";
-        String format = "100<200<300";
-        Object result = convertToCode(format,map);
+        String formula = "!(10*Math.abs(-1)<(2*5)/2-100)";
+        Object result = convertToCode(formula,map);
         System.out.println(result);
         if (result.toString().equals("true")){
             System.out.println(result);
         }
-
     }
 
     /**
